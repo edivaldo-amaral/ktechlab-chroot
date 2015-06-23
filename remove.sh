@@ -104,15 +104,16 @@ sleep 1
 rm /usr/local/bin/do_chroot
 
 echo
-echo -e "\e[36m Deletando o link simbolico para ktechlab \e[m"
+echo -e "\e[36m Deletando o link simbolico para ktechlab e ktechlab-gcb \e[m"
 sleep 1
 rm /usr/local/bin/ktechlab
+rm /usr/local/bin/ktechlab-gcb
 
 echo
-echo -e "\e[36m Deletando o icone ktechlab.desktop em /usr/share/applications/ \e[m"
+echo -e "\e[36m Deletando o icone ktechlab.desktop e ktechlab-gcb.desktop em /usr/share/applications/ \e[m"
 sleep 1
-#Criando o arquivo de texto chamado "do_chroot"
 rm /usr/share/applications/ktechlab.desktop
+rm /usr/share/applications/ktechlab-gcb.desktop
 sleep 1
 #----------------------------------------------------------
 
@@ -136,7 +137,7 @@ else
 	echo -e "\e[32m Removendo diretorio /var/lucid \e[m"
 	echo -e "\e[33m ------------------------------------------------ \e[m"
 	sleep 2
-	#rm -r /var/lucid
+	rm -r /var/lucid
 	sleep 2
 
 fi

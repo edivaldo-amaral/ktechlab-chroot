@@ -161,10 +161,15 @@ echo -e "\e[36m Criando o link simbolico para ktechlab \e[m"
 sleep 1
 ln -s /usr/local/bin/do_chroot /usr/local/bin/ktechlab
 
-echo
-echo -e "\e[36m Criando um icone em /usr/share/applications/ \e[m"
+echo -e "\e[36m Criando o link simbolico para ktechlab-gcb \e[m"
 sleep 1
-#Criando o arquivo de texto chamado "do_chroot"
+ln -s /usr/local/bin/do_chroot /usr/local/bin/ktechlab-gcb
+
+###### Criando um icone em /usr/share/applications/ para ktechlab
+echo
+echo -e "\e[36m Criando um icone em /usr/share/applications/ para ktechlab \e[m"
+sleep 1
+#Criando o arquivo de texto chamado "ktechlab.desktop"
 touch /usr/share/applications/ktechlab.desktop
 
 echo
@@ -210,6 +215,57 @@ Name=New Window
 Exec=ktechlab -n
 TargetEnvironment=Unity" >> /usr/share/applications/ktechlab.desktop
 sleep 1
+
+###### Criando um icone em /usr/share/applications/ para ktechlab-gcb
+echo
+echo -e "\e[36m Criando um icone em /usr/share/applications/ para ktechlab-gcb \e[m"
+sleep 1
+#Criando o arquivo de texto chamado "ktechlab-gcb.desktop"
+touch /usr/share/applications/ktechlab-gcb.desktop
+
+echo
+echo -e "\e[36m Inserindo o seguinte texto no icone criado: \e[m"
+sleep 1
+echo -e "\e[34m
+[Desktop Entry]
+Version=1.0
+Name=ktechlab-gcb
+# Only KDE 4 seems to use GenericName, so we reuse the KDE strings.
+# From Ubuntu's language-pack-kde-XX-base packages, version 9.04-20090413.
+GenericName=Simulador de circuito eletronico
+
+Exec=ktechlab-gcb %f
+Terminal=false
+Icon=/var/lucid/usr/share/icons/hicolor/64x64/apps/ktechlab-gcb.png
+Type=Application
+Categories=Development
+X-Ayatana-Desktop-Shortcuts=NewWindow
+
+[NewWindow Shortcut Group]
+Name=New Window
+Exec=ktechlab-gcb -n
+TargetEnvironment=Unity \e[m"
+sleep 1
+#Inserindo o texto no arquivo criado:
+echo "[Desktop Entry]
+Version=1.0
+Name=ktechlab-gcb
+# Only KDE 4 seems to use GenericName, so we reuse the KDE strings.
+# From Ubuntu's language-pack-kde-XX-base packages, version 9.04-20090413.
+GenericName=Simulador de circuito eletronico
+
+Exec=ktechlab-gcb %f
+Terminal=false
+Icon=/var/lucid/usr/share/icons/hicolor/64x64/apps/ktechlab-gcb.png
+Type=Application
+Categories=Development
+X-Ayatana-Desktop-Shortcuts=NewWindow
+
+[NewWindow Shortcut Group]
+Name=New Window
+Exec=ktechlab-gcb -n
+TargetEnvironment=Unity" >> /usr/share/applications/ktechlab-gcb.desktop
+sleep 1
 #----------------------------------------------------------
 
 
@@ -217,7 +273,7 @@ sleep 1
 # Fim
 clear
 echo
-echo -e "\e[32m Concluido \e[m"
+echo -e "\e[32m CONCLUIDO \e[m"
 echo -e "\e[33m ------------------------------------------------ \e[m"
 sleep 1
 #----------------------------------------------------------
